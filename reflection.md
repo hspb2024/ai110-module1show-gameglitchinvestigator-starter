@@ -8,6 +8,8 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the secret number kept changing" or "the hints were backwards").
 
+A: There were many problems that were easily noticeable with the game after running it the first time. As soon as you were going to make your first guess on normal difficulty I had chosen a number within the correct range of possible values, but it first did not decrease my attempt limit from 7 to 6. It had stayed at 7. After guessing more times, the attempt limit began to go down, however, it had constantly kept saying that the value was lower than that. I had put 1 as one of the values, and it still said that it was lower which is impossible because 1 should be the lowest value you are able to input. I was even able to plug in a number that is out of the range from 1-100.
+
 ---
 
 ## 2. How did you use AI as a teammate?
