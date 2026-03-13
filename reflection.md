@@ -31,6 +31,12 @@ Another error of the game was that the game was providing incorrect messages whe
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
 
+A: Whenever it comes to deciding whether a bug is really fixed, I would try to manually input as many numbers as I can to see if there aren't any problems. As said before in Part 2, I had believed that the problem of inputting a number between a range was fixed, however, I had found 1 bug when I had inputted the highest number of a range. This shows that even if it may seem like the program is correct, there may be always a tiny error somewhere that it hard to notice. 
+
+A test that I was trying to fix was the scoring system of the guessing game. After altering the codes slightly such as a wrong answer would actually accumulate the score, I had managed to pass the pytests after the AI had explained the errors. 
+
+Additionally, there was a bug that I had managed to notice. First of all, the attempt counter was able to decrement in number whenever there wasn't anything inputted at all. After making some edits to the with assistance from Claude, I retested it through the streamlit, and it was successfully not able to become a negative number of attempts. Here is where it still becomes interesting. After testing the code more after fixing 1 mistake in the game, it immediately led to another mistake that I noticed within the game. The game incorrectly displays the number of attempts because when you start playing the game at 'Normal' difficulty, when you put in your first number, the attempt number doesn't decrease at all. The game still works, but the number of attempts aren't displayed correctly. This allowed my to help better find out fixes that allows the game to look cleaner with the use of AI. 
+
 ---
 
 ## 4. What did you learn about Streamlit and state?
@@ -38,6 +44,12 @@ Another error of the game was that the game was providing incorrect messages whe
 - In your own words, explain why the secret number kept changing in the original app.
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 - What change did you make that finally gave the game a stable secret number?
+
+A: I believe that the reason why the secret number kept changing was due to the number changing types several times. Based on the attempt count, the secret number would change from an int into a string, and you are essentially trying to compare an int with a string which would cause major problems, due the types not matching. Allowing the secret number to stay as it is throughout the entire game would keep the game consistent. 
+
+If I was trying to explain Streamlit reruns and session states, I would say that with the guessing game provided as an example, each time you are inputting a random number to try to see what the correct number is, the program reruns itself yet keeps the saved data of what the secret number is for example. The session state stays the same after each rerun in order to make the game playable. The secret number would stay the same, and the attempt count would also be saved (why we are able to decrement by 1 each time we guess). 
+
+The change that I had made was to fully keep the secret number as an int or to put it simply, prevent it from changing types each time. It would allow the guesses to be properly compared with the secret number in order to provide whether or not you are guessing too high or low.
 
 ---
 
@@ -47,3 +59,5 @@ Another error of the game was that the game was providing incorrect messages whe
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+Whenever it comes to projects, I would try to always look through the code and see whether or not I believe where errors can be possibly be happening. While you consistently document your possible errors, this is where AI can be helpful in identifying them. With some great context to ask the AI tool, the AI is able to consistently identify a solution to your problem and quickly speed up the debugging process. I didn't know how strong utilizing Claude AI would be during this project because it was able to quickly identify where the errors in your program was, and once I see some of the recommended changes, it allowed me to realize in great detail why or why not this is a needed change. It allowed me to think more logically on bugs in coding. While there may be some instances where the AI tool can sometimes provide code that doesn't do what you hoped it would, it allows to think more strategically in a way on how you are able to provide good enough context on the issue.
